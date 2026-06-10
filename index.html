@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável - Equilíbrio entre Produção e Meio Ambiente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- DESIGN TOKENS & VARIÁVEIS --- */
+        :root {
+            --primary-green: #15803d;     /* Verde mata forte */
+            --light-green: #22c55e;       /* Verde folha brilhante */
+            --bg-green-soft: #f0fdf4;     /* Fundo verde sutil */
+            --primary-blue: #0369a1;      /* Azul água/tecnologia */
+            --light-blue: #0ea5e9;        /* Azul céu */
+            --bg-blue-soft: #f0f9ff;      /* Fundo azul sutil */
+            --dark-navy: #0f172a;         /* Texto principal */
+            --gray-text: #475569;         /* Texto secundário */
+            --white: #ffffff;
+            --gradient-nature: linear-gradient(135deg, #15803d 0%, #0369a1 100%);
+            --gradient-light: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 100%);
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- RESET & GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fafbfd;
+            color: var(--dark-navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- BOTÕES --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(21, 128, 61, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #166534;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21, 128, 61, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(3, 105, 161, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: #075985;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(3, 105, 161, 0.4);
+        }
+
+        /* --- CABEÇALHO --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary-green);
+        }
+
+        .logo span {
+            color: var(--primary-blue);
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--gray-text);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-nature);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Menu Hamburguer (Apenas CSS) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-green);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            background: var(--gradient-light);
+            padding: 100px 0 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fafbfd' fill-opacity='1' d='M0,192L48,202.7C96,213,192,235,288,218.7C384,203,480,149,576,149.3C672,149,768,203,864,224C960,245,1056,235,1152,213.3C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") bottom no-repeat;
+            background-size: cover;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            background-color: rgba(21, 128, 61, 0.1);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--dark-navy);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient-nature);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray-text);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Ilustração SVG de Natureza & Tecnologia */
+        .hero-illustration {
+            width: 100%;
+            max-width: 450px;
+            filter: drop-shadow(var(--shadow-lg));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- SEÇÃO DO TEMA --- */
+        .theme-section {
+            padding: 80px 0;
+            background-color: #fafbfd;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--gray-text);
+            font-size: 1.05rem;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .concept-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-green);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .concept-card:hover::before {
+            opacity: 1;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: transparent;
+        }
+
+        .concept-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .icon-green {
+            background-color: var(--bg-green-soft);
+            color: var(--primary-green);
+        }
+
+        .icon-blue {
+            background-color: var(--bg-blue-soft);
+            color: var(--primary-blue);
+        }
+
+        .concept-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--dark-navy);
+        }
+
+        .concept-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- SEÇÃO DE PILARES INSTITUCIONAIS --- */
+        .institutions {
+            padding: 100px 0;
+            background-color: var(--white);
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .inst-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .inst-row {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .inst-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .inst-row:nth-child(even) .inst-content {
+            direction: ltr;
+        }
+
+        .inst-media {
+            background-color: var(--bg-blue-soft);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed rgba(3, 105, 161, 0.2);
+        }
+
+        .inst-row:nth-child(odd) .inst-media {
+            background-color: var(--bg-green-soft);
+            border-color: rgba(21, 128, 61, 0.2);
+        }
+
+        .inst-media svg {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+        }
+
+        .inst-tag {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .inst-row:nth-child(odd) .inst-tag {
+            color: var(--primary-green);
+        }
+
+        .inst-content h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .inst-content p {
+            color: var(--gray-text);
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+        }
+
+        .inst-points {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .inst-points li {
+            position: relative;
+            padding-left: 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--dark-navy);
+        }
+
+        .inst-points li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2315803d'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clip-rule='evenodd' /%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .inst-row:nth-child(even) .inst-points li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%230369a1'%3E%3Cpath fill-rule='evenodd' d='M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' clip-rule='evenodd' /%3E%3C/svg%3E");
+        }
+
+        /* --- SEÇÃO DE MÉTODOS PRÁTICOS (INFOGRÁFICO) --- */
+        .methods-section {
+            padding: 100px 0;
+            background-color: var(--bg-blue-soft);
+            position: relative;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .method-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .method-item {
+            background-color: var(--white);
+            padding: 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            border: 1px solid rgba(226, 232, 240, 0.4);
+            transition: var(--transition);
+        }
+
+        .method-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .method-number {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-weight: 800;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        .method-item:nth-child(even) .method-number {
+            background-color: var(--primary-green);
+        }
+
+        .method-details h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--dark-navy);
+        }
+
+        .method-details p {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        /* --- SEÇÃO DADOS ESTATÍSTICOS --- */
+        .stats-section {
+            background: var(--gradient-nature);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card h3 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .stat-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* --- FAQ / CONSCIENTIZAÇÃO --- */
+        .faq-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Utilização da tag details para interatividade pura com HTML/CSS */
+        details {
+            background-color: #fafbfd;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius-md);
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        details[open] {
+            background-color: var(--bg-green-soft);
+            border-color: rgba(21, 128, 61, 0.2);
+            box-shadow: var(--shadow-sm);
+        }
+
+        summary {
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 15px 0;
+            cursor: pointer;
+            color: var(--dark-navy);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            transition: var(--transition);
+            font-weight: 400;
+        }
+
+        details[open] summary::after {
+            content: "−";
+            transform: rotate(180deg);
+            color: var(--primary-blue);
+        }
+
+        details p {
+            padding: 0 0 20px 0;
+            color: var(--gray-text);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        /* --- SEÇÃO CALL TO ACTION (CTA) --- */
+        .cta-section {
+            padding: 100px 0;
+            background-color: #fafbfd;
+            text-align: center;
+        }
+
+        .cta-box {
+            background: var(--gradient-nature);
+            border-radius: var(--border-radius-lg);
+            padding: 60px 40px;
+            color: var(--white);
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-box h2 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: var(--dark-navy);
+            color: #94a3b8;
+            padding: 80px 0 30px 0;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--light-green);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom span {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 2.5rem; }
+            .concept-grid { grid-template-columns: repeat(2, 1fr); }
+            .inst-row { grid-template-columns: 1fr; gap: 40px; }
+            .inst-row:nth-child(even) { direction: ltr; }
+            .methods-grid { grid-template-columns: 1fr; gap: 40px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; } /* Menu esconde-se no mobile para manter simplicidade pura do CSS */
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
+            .concept-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .stats-section { padding: 60px 0; }
+            .stat-card h3 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z" style="display:none;" />
+                    <!-- Ícone customizado de semente/folha -->
+                    <path d="M17 8C14.7 6.2 12 6.5 12 6.5C12 6.5 11.3 9.2 13 11.5C14.7 13.8 17 14 17 14C17 14 17.8 11.3 17 8ZM12 6.5C12 6.5 9.3 6.2 7 8C6.2 11.3 7 14 7 14C7 14 9.3 13.8 11 11.5C12.7 9.2 12 6.5 12 6.5ZM12 12C10.5 14.5 9 17 9 20C12 20 13.5 18 15 15.5C16.5 18 18 20 21 20C21 17 19.5 14.5 18 12C16.5 14.5 15 15.5 15 15.5C15 15.5 13.5 14.5 12 12Z" />
+                </svg>
+                Agrinho<span>Sustentável</span>
+            </a>
+            <nav>
+                <a href="#tema">O Tema</a>
+                <a href="#pilares">Instituições</a>
+                <a href="#tecnologias">Práticas</a>
+                <a href="#estatisticas">Dados</a>
+                <a href="#conscientizacao">Ações</a>
+                <a href="#agir" class="btn btn-primary" style="padding: 10px 20px; color: white;">Como Ajudar?</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag">Programa Agrinho 2026</span>
+                <h1>Agro Forte, Futuro Sustentável: <span>Equilíbrio Perfeito</span></h1>
+                <p>Descubra como o campo e as florestas trabalham juntos no Brasil. Através da ciência da Embrapa e da responsabilidade socioambiental, mostramos que é possível produzir alimentos em abundância protegendo nosso planeta.</p>
+                <div class="hero-buttons">
+                    <a href="#tema" class="btn btn-primary">Conhecer o Projeto</a>
+                    <a href="#tecnologias" class="btn btn-secondary">Tecnologias Verdes</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- SVG Dinâmico de Planta brotando de uma gota de água/engrenagem tecnológica -->
+                <svg class="hero-illustration" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="250" cy="250" r="180" fill="#f0fdf4" stroke="#e2e8f0" stroke-width="2"/>
+                    <!-- Água estilizada -->
+                    <path d="M150 350C200 370 300 330 350 350V380H150V350Z" fill="url(#blueGrad)" opacity="0.4"/>
+                    <!-- Folhas estilizadas -->
+                    <path d="M250 120C270 170 250 250 250 340C250 250 210 180 180 150C210 145 235 130 250 120Z" fill="url(#greenGrad)" />
+                    <path d="M250 190C290 220 320 250 310 290C280 290 260 250 250 220" fill="#15803d" />
+                    <!-- Símbolo de Tecnologia -->
+                    <circle cx="250" cy="340" r="25" fill="#0369a1" />
+                    <path d="M235 340H265M250 325V355" stroke="white" stroke-width="3"/>
+                    <defs>
+                        <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#22c55e" />
+                            <stop offset="100%" stop-color="#15803d" />
+                        </linearGradient>
+                        <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#38bdf8" />
+                            <stop offset="100%" stop-color="#0369a1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO O TEMA -->
+    <section id="tema" class="theme-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Alcançando o Equilíbrio</h2>
+                <p>O agronegócio forte não precisa rivalizar com a preservação ambiental. O futuro exige integração harmônica entre as necessidades de produção e as leis da natureza.</p>
+            </div>
+            
+            <div class="concept-grid">
+                <!-- Card 1 -->
+                <div class="concept-card">
+                    <div class="concept-icon icon-green">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/>
+                            <path d="M12 6V18M6 12H18"/>
+                        </svg>
+                    </div>
+                    <h3>Produtividade Inteligente</h3>
+                    <p>Produzir mais usando menos recursos. Graças à tecnologia, o Brasil consegue aumentar suas safras sem a necessidade de abrir novas áreas de mata nativa.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="concept-card">
+                    <div class="concept-icon icon-blue">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2a5 5 0 0 0-5 5v3.2a12 12 0 0 0-3.9 8.3c-.1.5.3.9.8.9h16.2c.5 0 .9-.4.8-.9a12 12 0 0 0-3.9-8.3V7a5 5 0 0 0-5-5z"/>
+                        </svg>
+                    </div>
+                    <h3>Água e Solo Saudáveis</h3>
+                    <p>O cuidado contínuo das bacias hidrográficas e a rotação de culturas protegem o bem mais precioso do agricultor: os nutrientes da terra e a água para irrigação.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="concept-card">
+                    <div class="concept-icon icon-green">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </div>
+                    <h3>Respeito Legislação</h3>
+                    <p>Estar em dia com o Código Florestal Brasileiro é garantia de valorização internacional da produção nacional e de proteção da nossa rica biodiversidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PILARES INSTITUCIONAIS -->
+    <section id="pilares" class="institutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quem Cuida e Transforma?</h2>
+                <p>Órgãos públicos, cientistas e fiscalizadores lideram a evolução técnica e legislativa do agronegócio sustentável nacional.</p>
+            </div>
+
+            <div class="inst-grid">
+                <!-- EMBRAPA -->
+                <div class="inst-row">
+                    <div class="inst-media">
+                        <!-- SVG Representativo da Ciência Agropecuária -->
+                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+                            <rect x="70" y="80" width="60" height="70" rx="4" fill="#15803d" />
+                            <path d="M100 50L130 80H70L100 50Z" fill="#166534" />
+                            <circle cx="100" cy="115" r="15" fill="white" />
+                            <path d="M95 115H105M100 110V120" stroke="#15803d" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="inst-content">
+                        <span class="inst-tag">Ciência & Tecnologia</span>
+                        <h3>EMBRAPA</h3>
+                        <p>A Empresa Brasileira de Pesquisa Agropecuária é o cérebro por trás do agro moderno. Ela estuda o solo e a biologia nacional para criar defensivos biológicos, sementes resilientes e soluções agrícolas sustentáveis, como o sistema ABC (Agricultura de Baixa Emissão de Carbono).</p>
+                        <ul class="inst-points">
+                            <li>Fixação biológica de Nitrogênio</li>
+                            <li>Integração Lavoura-Pecuária</li>
+                            <li>Apoio a Bioinsumos modernos</li>
+                            <li>Recuperação de Pastagens</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- SERVIÇO FLORESTAL BRASILEIRO -->
+                <div class="inst-row">
+                    <div class="inst-media">
+                        <!-- SVG Representativo das Florestas Protegidas -->
+                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="2"/>
+                            <path d="M100 40L130 90H70L100 40Z" fill="#0369a1" />
+                            <path d="M100 70L140 130H60L100 70Z" fill="#0284c7" />
+                            <rect x="93" y="130" width="14" height="30" fill="#075985" />
+                        </svg>
+                    </div>
+                    <div class="inst-content">
+                        <span class="inst-tag">Mapeamento & Planejamento</span>
+                        <h3>Serviço Florestal Brasileiro (SFB)</h3>
+                        <p>O SFB cuida da integridade das florestas nacionais e gerencia o revolucionário **CAR (Cadastro Ambiental Rural)**. O CAR funciona como um "RG" obrigatório da terra, onde cada proprietário rural precisa mapear e provar a conservação de suas matas obrigatórias.</p>
+                        <ul class="inst-points">
+                            <li>Gestão de Reservas Legais</li>
+                            <li>Áreas de Preservação Permanente</li>
+                            <li>Transparência no Uso do Solo</li>
+                            <li>Cadastro Ambiental Rural (CAR)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IBAMA -->
+                <div class="inst-row">
+                    <div class="inst-media">
+                        <!-- SVG Representativo de Escudo e Fiscalização -->
+                        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="80" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+                            <path d="M100 50C100 50 140 60 140 90C140 140 100 160 100 160C100 160 60 140 60 90C60 60 100 50 100 50Z" fill="#b91c1c" />
+                            <path d="M85 105L95 115L120 90" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="inst-content">
+                        <span class="inst-tag">Monitoramento & Preservação</span>
+                        <h3>IBAMA</h3>
+                        <p>O braço de fiscalização do Estado brasileiro. O IBAMA garante que as restrições ambientais sejam respeitadas, fiscaliza o desmatamento ilegal e monitora queimadas no território brasileiro, punindo crimes ambientais para blindar a integridade do agronegócio que trabalha dentro da lei.</p>
+                        <ul class="inst-points">
+                            <li>Combate ao Desmatamento Ilegal</li>
+                            <li>Monitoramento Via Satélite</li>
+                            <li>Licenciamento Rigoroso</li>
+                            <li>Autuação de Infrações</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO MÉTODOS PRÁTICOS (ILPF) -->
+    <section id="tecnologias" class="methods-section">
+        <div class="container methods-grid">
+            <div>
+                <span class="hero-tag">A Prática Funciona</span>
+                <h2 style="font-size: 2.3rem; font-weight: 800; margin: 15px 0 25px 0; color: var(--dark-navy);">Como unificar Lavoura, Pecuária e Floresta?</h2>
+                <p style="color: var(--gray-text); margin-bottom: 30px; font-size: 1.05rem;">Através de práticas cientificamente validadas de manejo sustentável, o produtor aumenta seus ganhos e protege a natureza simultaneamente. Conheça as 4 táticas principais:</p>
+                <a href="#conscientizacao" class="btn btn-secondary">Aprender Práticas Escolares</a>
+            </div>
+            
+            <div class="method-list">
+                <!-- Item 1 -->
+                <div class="method-item">
+                    <div class="method-number">1</div>
+                    <div class="method-details">
+                        <h4>ILPF (Integração Lavoura-Pecuária-Floresta)</h4>
+                        <p>Consiste na associação de cultivos agrícolas, criação de gado e plantio de árvores em uma mesma propriedade, otimizando a ciclagem dos nutrientes da terra.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="method-item">
+                    <div class="method-number">2</div>
+                    <div class="method-details">
+                        <h4>Plantio Direto na Palha</h4>
+                        <p>O solo não é revirado. O plantio é feito sobre resíduos da colheita anterior, protegendo a terra de erosões e mantendo a umidade vital por mais tempo.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="method-item">
+                    <div class="method-number">3</div>
+                    <div class="method-details">
+                        <h4>Reflorestamento de APPs</h4>
+                        <p>Cuidado e recomposição vegetal de margens de rios (Áreas de Preservação Permanente) e nascentes, que garantem a sustentação hídrica para as lavouras vizinhas.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="method-item">
+                    <div class="method-number">4</div>
+                    <div class="method-details">
+                        <h4>Uso Avançado de Bioinsumos</h4>
+                        <p>Substituição de fertilizantes puramente químicos por microrganismos e defensivos naturais que aumentam as defesas das plantas sem degradar a microbiologia do solo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DADOS ESTATÍSTICOS -->
+    <section id="estatisticas" class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>+17M</h3>
+                    <p>Hectares com ILPF no Brasil</p>
+                </div>
+                <div class="stat-card">
+                    <h3>7M+</h3>
+                    <p>Imóveis cadastrados no CAR</p>
+                </div>
+                <div class="stat-card">
+                    <h3>60%</h3>
+                    <p>De matas nativas preservadas no país</p>
+                </div>
+                <div class="stat-card">
+                    <h3>35%</h3>
+                    <p>Redução média de CO₂ no solo sustentável</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONSCIENTIZAÇÃO (FAQ) -->
+    <section id="conscientizacao" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Respostas para um Futuro Sustentável</h2>
+                <p>Muitas dúvidas surgem sobre o real papel do agronegócio sustentável. Selecionamos as respostas baseadas em pesquisas oficiais.</p>
+            </div>
+
+            <div class="faq-accordion">
+                <details open>
+                    <summary>O que significa o tema do Agrinho deste ano?</summary>
+                    <p>Significa que a economia forte trazida pela agropecuária deve caminhar lado a lado com as regras de preservação ambiental brasileiras. É a prova prática de que a segurança alimentar nacional só existirá a longo prazo se mantivermos solos ricos e água potável abundantes, garantidos pelas florestas intactas.</p>
+                </details>
+
+                <details>
+                    <summary>Qual a função das matas nativas dentro de uma fazenda?</summary>
+                    <p>As florestas nativas funcionam como reguladores térmicos e hídricos. Elas evitam poeiras, controlam ventos fortes, atraem animais polinizadores e evitam a erosão nas bordas das plantações, atuando diretamente no rendimento das lavouras de grãos, café, laranja e outras culturas.</p>
+                </details>
+
+                <details>
+                    <summary>O pequeno produtor também pode participar desse movimento?</summary>
+                    <p>Com certeza. A agricultura familiar (coordenada pelo MDA) aplica e se beneficia muito dessas técnicas, produzindo alimentos orgânicos, gerando renda com turismo ecológico e garantindo a subsistência equilibrada de comunidades tradicionais por todo o Brasil.</p>
+                </details>
+
+                <details>
+                    <summary>Onde encontrar dados oficiais adicionais?</summary>
+                    <p>O cidadão e o estudante do Agrinho podem encontrar ricas bibliografias acessando os portais de dados abertos da **Embrapa**, a central do **CAR no Serviço Florestal Brasileiro** e relatórios de conservação semestrais publicados pelo **IBAMA**.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CTA -->
+    <section id="agir" class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Participe do Agrinho!</h2>
+                <p>A conscientização começa nas salas de aula e em nossas casas. O que você faz hoje em termos de conservação garante a abundância e a beleza das próximas gerações.</p>
+                <a href="#pilares" class="btn btn-secondary" style="background-color: white; color: var(--primary-green);">Estudar Projetos das Escolas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" style="color: var(--light-green);">
+                    <svg viewBox="0 0 24 24" style="fill: var(--light-green);">
+                        <path d="M17 8C14.7 6.2 12 6.5 12 6.5C12 6.5 11.3 9.2 13 11.5C14.7 13.8 17 14 17 14C17 14 17.8 11.3 17 8ZM12 6.5C12 6.5 9.3 6.2 7 8C6.2 11.3 7 14 7 14C7 14 9.3 13.8 11 11.5C12.7 9.2 12 6.5 12 6.5ZM12 12C10.5 14.5 9 17 9 20C12 20 13.5 18 15 15.5C16.5 18 18 20 21 20C21 17 19.5 14.5 18 12C16.5 14.5 15 15.5 15 15.5C15 15.5 13.5 14.5 12 12Z" />
+                    </svg>
+                    Agrinho<span>Sustentável</span>
+                </a>
+                <p>Educação e conscientização para o equilíbrio entre produção de alimentos e o carinho com nossa rica natureza.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Links úteis externos</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.embrapa.br" target="_blank" rel="noopener">Embrapa Oficial</a></li>
+                    <li><a href="https://www.gov.br/ibama" target="_blank" rel="noopener">Portal IBAMA</a></li>
+                    <li><a href="https://www.car.gov.br" target="_blank" rel="noopener">Serviço Florestal - CAR</a></li>
+                    <li><a href="https://www.sistemafaep.org.br" target="_blank" rel="noopener">Sistema FAEP/SENAR</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Atalhos</h4>
+                <ul class="footer-links">
+                    <li><a href="#tema">Nossa Proposta</a></li>
+                    <li><a href="#pilares">Instituições Governamentais</a></li>
+                    <li><a href="#tecnologias">Sistemas ILPF</a></li>
+                    <li><a href="#conscientizacao">Dúvidas Frequentes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Agrinho Paraná. Criado para conscientizar jovens sobre o <span>Agro Forte, Futuro Sustentável</span>.</p>
+            <p>Trabalho Escolar / Educativo</p>
+        </div>
+    </footer>
+
+</body>
+</html>
